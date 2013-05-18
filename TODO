@@ -1,0 +1,17 @@
+* Fazer o bot responder a mensagens em pvt, indicando em que canal
+ele deve atuar possivelmente
+  - exemplo, /msg lopanbot %usfuck #littlechina brunocardoso
+  - ele jah recebe msg em pvt, mas precisa repessar pra ele executarr
+    comandos
+
+* Criar um novo comando %set pra galera poder configurar o bot pelo
+canal mesmo (dai teria que ter um jeito de registrar tambem quem pode
+mexer nele ou nao)
+  - exemplo, %set verbosity 0 (bot cala a boca)
+  - exemplo, %set verbosity 3 (o bot fala pra caralho)
+
+* Adicionar um opcao de linha de comando para especificar diretorio de logs diferente!
+
+* Contador de ++ e -- e ranking associado
+  - exemplo, %ranking (e ele cuspiria o ranking atual)
+
