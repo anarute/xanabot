@@ -1,4 +1,4 @@
-#! -*- enconding: utf-8 -*-
+#! -*- encoding: utf-8 -*-
 
 import os
 import os.path
