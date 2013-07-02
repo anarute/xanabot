@@ -80,22 +80,22 @@ class LopanBot(irc.IRCClient):
         "%{seen,sapo,sapolicia,pc} nick | " \
 	"%{conclua,botsnack,pc,karma} | %tell nick msg_to_tell"
 
-    chat_msgs = ["I am Napol! Who are these people? Friends of yours? ",
+    chat_msgs = ["Alô alô, você sabe quem sou eu?",
                  "ola!!",
                  "oi!",
-                 "que merda de dia hoje!",
+                 "aí já é vandalismo...",
                  "que belo dia hoje!",
                  "como eh que ta indo ai?",
-                 "ja eh 4h20?",
-                 "e dai?",
-                 "CALUNIADOR!! MENTIROSO!!",
-                 "o que voce tem pra contar?",
-		 ":-)",
+                 "aidaaaa, aida por favorrr",
+                 "vamo tomar uma breja?",
+                 "cheia de manias... toda dengosa",
+                 "tá deiz?",
+		 "sabe quem mais falava isso??",
 		 ":-)",
                 ]
 
-    welcome_msgs = ["voce nao eh o robin, aquele viadinho ??",
-                    "all your base are belong to us",
+    welcome_msgs = ["alô alô, você sabe quem sou eu?",
+                    "satanás é você?",
 		            "eh ou nao eh ou nao eh?",
                     "You have no chance to survive! Make your time.",
                     "fala brasil!"]
@@ -103,16 +103,16 @@ class LopanBot(irc.IRCClient):
     names = ('Hitler', 'Stalin', 'Mussolini', 'Stallman', 'Tony Ramos',)
 
     badwords_regex = rec("(bixa|viado|corno|fdp|puta|babaca)")
-    nottoobadwords_regex = rec("(faz um tempao|foda|beijo|bjo|leite|sucesso|sabe|quem)")
+    nottoobadwords_regex = rec("(4h20|to com fome|buceta|boceta|pode crer|sucesso|sabe|modere seu linguajar)")
 
-    nottoobadwords_dict = {'faz um tempao': "que soh da nilba na computacao",
-		    "foda" : "entao so pode ser viado",
-		    "beijo" : "beijo do bot!",
-		    "bjo" : "beijo do bot!",
-		    "leite" : "leite eh pros fracos!",
-		    "sucesso" : "sucesso!!!",
-		    "sabe" : "putz! ..eu nao sei",
-		    "quem" : " /\\",
+    nottoobadwords_dict = {'4h20': "aqui só tem maconheiro...",
+		    "fome" : "quero leiteee! eu assumo uma pipoca, me saco-dê",
+		    "buceta" : "mei quilo, pfv!",
+		    "boceta" : "mei quilo, pfv!",
+		    "pode crer" : "tá serto",
+		    "sucesso" : "su-sex!",
+		    "sabe" : "putz! tbm nao sei.",
+		    "modere seu linguajar" : "porra caralho cu",
 		    }
 
     insult_replies = ["%(user)s: %(badword)s eh a senhora sua mae!!",
