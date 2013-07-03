@@ -88,6 +88,9 @@ class LopanBot(irc.IRCClient):
                  "maano, vou no banheiro.",
                  "aidaaaa, aida por favorrr",
                  "vamo tomar uma breja?",
+                 "tem TJ na porta...",
+                 "aqui só tem rola, pode ser?",
+                 "júnio tá no cowork... digo nada",
                  "cheia de manias... toda dengosa",
                  "tá deiz?",
         		 "sabe quem mais falava isso??",
@@ -97,13 +100,13 @@ class LopanBot(irc.IRCClient):
     welcome_msgs = ["alô alô, você sabe quem sou eu?",
                     "satanás é você?",
 		            "eh ou nao eh ou nao eh?",
-                    "You have no chance to survive! Make your time.",
-                    "fala brasil!"]
+                    "amém!",
+                    "oi genten!"]
 
     names = ('Inês Brasil', 'Leona', 'Nazaré', 'Marilac', 'Tony Ramos')
 
     badwords_regex = rec("(bixa|viado|corno|fdp|puta|babaca)")
-    nottoobadwords_regex = rec("(4h20|to com fome|to indo|buceta|boceta|pode crer|podecre|sucesso|sabe|modere seu linguajar|quem|merda|hahaha|pala)")
+    nottoobadwords_regex = rec("(4h20|to com fome|to indo|buceta|boceta|pode crer|podecre|sucesso|sabe|modere seu linguajar|quem|merda|hahaha|pala|beijo|Beijo|rola|caralho)")
 
     nottoobadwords_dict = {'4h20': "já to com larica",
 		    "fome" : "quero leiteee! eu assumo uma pipoca, me saco-dê",
@@ -117,13 +120,17 @@ class LopanBot(irc.IRCClient):
 		    "sucesso" : "su-sex!",
 		    "sabe" : "putz! tbm nao sei.",
 		    "modere seu linguajar" : "porra caralho cu",
-            "sabe" : "não sei quem fui",
+            "quem" : "não sei quem fui",
             "merda" : "esse pau veio tá podre",
             "hahaha" : "kkkkkkkkkkkkk",
             "pala" : "pála boa é pála dada...",
+            "beijo" : "beijo lindezaa",
+            "Beijo" : "beijo meu bem",
+            "rola" : "só tem rola aqui",
+            "caralho" : "só tem rola aqui",
 		    }
 
-    insult_replies = ["%(user)s: %(badword)s eh a senhora sua mae!!",
+    insult_replies = ["%(user)s: %(badword)s sou eu!!",
                       "%(user)s: ma como?",
                       "%(user)s: ah, voce nao sabe quem eu sou?",
                       "%(user)s: suruba aonde porra?",
@@ -367,7 +374,7 @@ class LopanBot(irc.IRCClient):
                 worst = []
                 for k in self.get_worst_karma(5):
                     worst.append("%s(%s)" % k)
-                return ["best: %s" % "  ".join(best), "and", "worst: %s" % "  ".join(worst)]
+                return ["melhoresh do mundo: %s" % "  ".join(best), "e", "os losers: %s" % "  ".join(worst)]
 
         if cmd == "usfuck":
             if cmdargs:
