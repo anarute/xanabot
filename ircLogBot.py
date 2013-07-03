@@ -71,9 +71,9 @@ class MessageLogger(object):
 class LopanBot(irc.IRCClient):
     """A logging IRC bot."""
 
-    nickname = "napolbot"
+    nickname = "xanabot"
     password = "HIDDEN"
-    realname = "Napol Bot"
+    realname = "Xana Bot"
     sourceURL = "http://www.littlechina.org"
 
     help = "Usage: %usfuck [nick] | " \
@@ -81,17 +81,17 @@ class LopanBot(irc.IRCClient):
 	"%{conclua,botsnack,pc,karma} | %tell nick msg_to_tell"
 
     chat_msgs = ["Alô alô, você sabe quem sou eu?",
-                 "ola!!",
-                 "oi!",
+                 "ma oee!! e o bambu?",
+                 "oi! estou entrando num negócio muito legal e lembrei de vcs. a ideia é bastante inovadora, basta convidar alguns amigos pra participar também que você pode tirar uma boa graninha extra! é incrivel.. posso ir aí hoje mesmo mostrar os produtos! sim????",
                  "aí já é vandalismo...",
                  "que belo dia hoje!",
-                 "como eh que ta indo ai?",
+                 "maano, vou no banheiro.",
                  "aidaaaa, aida por favorrr",
                  "vamo tomar uma breja?",
                  "cheia de manias... toda dengosa",
                  "tá deiz?",
-		 "sabe quem mais falava isso??",
-		 ":-)",
+        		 "sabe quem mais falava isso??",
+        		 ":-)",
                 ]
 
     welcome_msgs = ["alô alô, você sabe quem sou eu?",
@@ -100,19 +100,27 @@ class LopanBot(irc.IRCClient):
                     "You have no chance to survive! Make your time.",
                     "fala brasil!"]
 
-    names = ('Hitler', 'Stalin', 'Mussolini', 'Stallman', 'Tony Ramos',)
+    names = ('Inês Brasil', 'Leona', 'Nazaré', 'Marilac', 'Tony Ramos')
 
     badwords_regex = rec("(bixa|viado|corno|fdp|puta|babaca)")
-    nottoobadwords_regex = rec("(4h20|to com fome|buceta|boceta|pode crer|sucesso|sabe|modere seu linguajar)")
+    nottoobadwords_regex = rec("(4h20|to com fome|to indo|buceta|boceta|pode crer|podecre|sucesso|sabe|modere seu linguajar|quem|merda|hahaha|pala)")
 
-    nottoobadwords_dict = {'4h20': "aqui só tem maconheiro...",
+    nottoobadwords_dict = {'4h20': "já to com larica",
 		    "fome" : "quero leiteee! eu assumo uma pipoca, me saco-dê",
+            "to indo" : "já vai tarde... brinks! <3",
 		    "buceta" : "mei quilo, pfv!",
 		    "boceta" : "mei quilo, pfv!",
+            "grelo" : "mei quilo, pfv!",
+            "xana" : "mei quilo, pfv!",
 		    "pode crer" : "tá serto",
+            "podecre" : "pods crean",
 		    "sucesso" : "su-sex!",
 		    "sabe" : "putz! tbm nao sei.",
 		    "modere seu linguajar" : "porra caralho cu",
+            "sabe" : "não sei quem fui",
+            "merda" : "esse pau veio tá podre",
+            "hahaha" : "kkkkkkkkkkkkk",
+            "pala" : "pála boa é pála dada...",
 		    }
 
     insult_replies = ["%(user)s: %(badword)s eh a senhora sua mae!!",
@@ -393,7 +401,7 @@ class LopanBot(irc.IRCClient):
 
         if cmd == "conclua":
             if not cmdargs:
-                return "Entao eu sou um viado mesmo!"
+                return "mama, pega no meu grelo e mama"
             return ""
 
         if cmd == "pc":
@@ -406,7 +414,7 @@ class LopanBot(irc.IRCClient):
                 nick = cmdargs.split(" ",1)[0]
                 msg = cmdargs.split(" ",1)[1]
                 self.tell_store_message(nick, user, msg)
-                return "%s: na hora que %s aparecer eu conto." % (user, nick)
+                return "%s: pode deixar, na hora que %s aparecer eu conto. sou fofoqueira meixmo.." % (user, nick)
             else:
                 return "%s burro, aprende a me usar!!" % user
 
@@ -427,7 +435,7 @@ class LopanBot(irc.IRCClient):
         self.save_pickle(self.TELLFILE, db)
 
     def tell_read_messages(self, user, channel):
-        self.msg(channel, "%s: eu tenho mensagens para vc:" % user)
+        self.msg(channel, "%s: eu tenho um recadinho para vc:" % user)
 	msgs = self.memory["tell"].pop(user)
         self.save_pickle(self.TELLFILE, self.memory["tell"])
 	for ts, sender, contents in msgs:
