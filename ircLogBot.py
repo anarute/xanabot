@@ -108,7 +108,6 @@ class LopanBot(irc.IRCClient):
     names = ('Inês Brasil', 'Leona', 'Nazaré', 'Marilac', 'Tony Ramos')
 
     badwords_regex = rec("(bixa|viado|corno|fdp|puta|babaca)")
-    nottoobadwords_regex = rec("(4h20|fome|to indo|buceta|boceta|podecre|sucesso|sabe|modere seu linguajar|quem|merda|hahaha|pala|beijo|Beijo|rola|caralho)")
 
     nottoobadwords_dict = {'4h20': "já to com larica",
 		    "fome" : "quero leiteee! eu assumo uma pipoca, me saco-dê",
@@ -205,7 +204,13 @@ class LopanBot(irc.IRCClient):
             return None
 
     def find_nottoobadword(self, msg):
-        match = self.nottoobadwords_regex.search(msg)
+        keys = ""
+        for key in nottoobadwords_dict.keys():
+                keys = keys + key + "|" 
+
+        keys = keys[:-1]
+        regex = rec(keys)		
+        match = regex.search(msg)
         if match:
             return match.groups()[0]
         else:
