@@ -84,13 +84,14 @@ class LopanBot(irc.IRCClient):
                  "ma oee!! e o bambu?",
                  "oi! estou entrando num negócio muito legal e lembrei de vcs. a ideia é bastante inovadora, basta convidar alguns amigos pra participar também que você pode tirar uma boa graninha extra! é incrivel.. posso ir aí hoje mesmo mostrar os produtos! sim????",
                  "aí já é vandalismo...",
+                 "armaria!",
+                 "QUE!?",
                  "que belo dia hoje!",
                  "maano, vou no banheiro.",
                  "aidaaaa, aida por favorrr",
                  "vamo tomar uma breja?",
                  "tem TJ na porta...",
                  "aqui só tem rola, pode ser?",
-                 "júnio tá no cowork... digo nada",
                  "cheia de manias... toda dengosa",
                  "tá deiz?",
         		 "sabe quem mais falava isso??",
@@ -99,14 +100,15 @@ class LopanBot(irc.IRCClient):
 
     welcome_msgs = ["alô alô, você sabe quem sou eu?",
                     "satanás é você?",
-		            "eh ou nao eh ou nao eh?",
+		"eh ou nao eh ou nao eh?",
+		"me dá um abraço?",
                     "amém!",
                     "oi genten!"]
 
     names = ('Inês Brasil', 'Leona', 'Nazaré', 'Marilac', 'Tony Ramos')
 
     badwords_regex = rec("(bixa|viado|corno|fdp|puta|babaca)")
-    nottoobadwords_regex = rec("(4h20|to com fome|to indo|buceta|boceta|pode crer|podecre|sucesso|sabe|modere seu linguajar|quem|merda|hahaha|pala|beijo|Beijo|rola|caralho)")
+    nottoobadwords_regex = rec("(4h20|fome|to indo|buceta|boceta|podecre|sucesso|sabe|modere seu linguajar|quem|merda|hahaha|pala|beijo|Beijo|rola|caralho)")
 
     nottoobadwords_dict = {'4h20': "já to com larica",
 		    "fome" : "quero leiteee! eu assumo uma pipoca, me saco-dê",
@@ -458,7 +460,7 @@ class LopanBot(irc.IRCClient):
     def userJoined(self, user, channel):
         user = user.split('!', 1)[0]
 	if (user == "paulets"):
-		self.msg(channel, "%s: Oi! tudo bem ai??" % user)
+		self.msg(channel, "%s: Oi! tudo bem ai?? tá joia?" % user)
 	else:
 		self.msg(channel, "%s: %s" % (user, random.choice(self.welcome_msgs)))
         self.tell_check_messages(user, channel)
@@ -475,15 +477,13 @@ class LopanBot(irc.IRCClient):
         threading.Timer(60, self.check_time).start()
         st = time.gmtime(time.time())
 
-	if (st.tm_hour == 7 and st.tm_min == 20):
+	if (st.tm_hour == 6 and st.tm_min == 20):
 		self.msg("#repsitcom", "galera!! 4h20 ai!")
-	if (st.tm_hour == 19 and st.tm_min == 20):
+	if (st.tm_hour == 18 and st.tm_min == 20):
 		self.msg("#repsitcom", "galera!! 4h20 ai!")
-	if (st.tm_hour == 12 and st.tm_min == 01):
+	if (st.tm_hour == 10 and st.tm_min == 24):
 		self.msg("#repsitcom", "Bom dia!!!")
-	if (st.tm_hour == 14 and st.tm_min == 27):
-		self.msg("#repsitcom", "virgilio: anarute: o que tem de almoco?")
-	if (st.tm_hour == 15 and st.tm_min == 43):
+	if (st.tm_hour == 13 and st.tm_min == 52):
 		self.msg("#repsitcom", "to com fome...")
 
 class LopanBotFactory(protocol.ClientFactory):
